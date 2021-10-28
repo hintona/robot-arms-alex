@@ -1,6 +1,8 @@
 import csv
 import matplotlib.pyplot as plt
 import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import PolynomialFeatures
 
 def graphData():
     xData1 = []
@@ -53,13 +55,14 @@ def graphData():
             xData5.append(line[0])
             yData5.append(line[1])
 
-    plt.rcParams["figure.figsize"] = [20, 10]
+    plt.rcParams["figure.figsize"] = [10, 10]
     plt.rcParams["figure.autolayout"] = True
-    plt.plot(xData1,yData1)
-    plt.plot(xData2,yData2)
-    plt.plot(xData3,yData3)
-    plt.plot(xData4,yData4)
-    plt.plot(xData5,yData5)
+
+    #plt.plot(xData1,yData1)
+    #plt.plot(xData2,yData2)
+    #plt.plot(xData3,yData3)
+    #plt.plot(xData4,yData4)
+    #plt.plot(xData5,yData5)
     plt.show()
 
 graphData()

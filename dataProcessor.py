@@ -5,15 +5,15 @@ def dataProcessor():
     data = []
     timeStamp = 0
 
-    with open('data - Sheet1.csv','r')as firstFile:
+    with open('RectangleDraw - Trial10.csv','r')as firstFile:
         csvReader = csv.reader(firstFile)
 
         for line in csvReader:
-            data.append(line)
+            data.append(line[3])
 
     increment = 1/len(data)
 
-    with open('processedWristRotate5.csv','w') as secondFile:
+    with open('processedWristAngle10.csv','w') as secondFile:
         csvWriter = csv.writer(secondFile)
         csvWriter.writerow(["time","position"])
 
