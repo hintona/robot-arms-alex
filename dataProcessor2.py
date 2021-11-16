@@ -1,5 +1,7 @@
 import csv
 
+# Reads from multiple files each with the same joint in it and averages it together
+
 def dataProcessor2():
 
     #read from each csv file
