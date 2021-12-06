@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>robotest</name>
+  <version>0.0.1</version>
+  <description>
+    Package to attempt to subscribe to robot arm joint states
+  </description>
+
+  <maintainer email="devon.gardner24@ncf.edu">Devon Gardner</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <exec_depend>roscpp</exec_depend>
+  <build_depend>interbotix_xs_sdk</build_depend>
+  <exec_depend>interbotix_xs_sdk</exec_depend>
+  <build_depend>interbotix_xs_msgs</build_depend>
+  <exec_depend>interbotix_xs_msgs</exec_depend>
+  <build_depend>interbotix_xsarm_control</build_depend>
+  <exec_depend>interbotix_xsarm_control</exec_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <build_depend>std_msgs</build_depend>
+  <exec_depend>std_msgs</exec_depend>
+
+</package>
