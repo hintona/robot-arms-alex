@@ -1,6 +1,8 @@
 import csv
 
-# Reads from multiple files each with the same joint in it and averages it together
+# Reads from 10 CSV files each with the same joint in it and averages it together
+# Requires each CSV file to only contain numbers, and to be the same length. 
+# Each CSV file should have lines in this format: time,position
 
 def dataProcessor2():
 

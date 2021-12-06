@@ -1,16 +1,31 @@
-# Purpose is to remove the flat lines at the start and stop of each joint so we can fit lines better
+# Purpose is to remove the flat lines at the start and stop of each joint 
+# so we can fit lines better
+# This will run on 20 individual CSV files that each contain raw data for 
+# all joints on the robot
+# This will return a single CSV file for a single joint that contains each
+# trial for that joint, all normalised, and with the flat ends trimmed off
+# The user will need to pass in which joint they want trimmed, what value
+# the flat end that they want trimmed is, and whether the program should 
+# remove values above, below, or at the given value.
 import csv
 
 
 def cleaner():
 
-    #waist,shoulder,elbow,wrist_angle,wrist_rotate,gripper,left_finger,right_finger
+    # jointNum should be given the number that corresponds with which joint you
+    # want cleaned up. Below are the values that correspond with each joint
+    # waist = 0
+    # shoulder = 1
+    # elbow = 2
+    # wrist_angle = 3
+    # wrist_rotate = 4
+    # gripper = 5
+    # left_finger = 6
+    # right_finger = 7
     jointNum = 3
 
-    #for the elbow, above 1.70727
-    #shoulder, below -1.89907
-    #waist, at 0.0138058
-    #wrist angle, above 0.633534
+    # This should be given the value of the flat segments at the start and end of the 
+    # file that you want trimmed off. 
     flatline = 0.632
 
     data1 = []
@@ -35,7 +50,7 @@ def cleaner():
     data20 = []
 
 
-    #read file into an array
+    #reads each file into an array
     with open('Raw X-Data/JointStates1.csv','r')as file1:
         csvReader = csv.reader(file1)
 
@@ -159,6 +174,8 @@ def cleaner():
 
 
     #loop thru array to remove everything that is at that particular joint's flatline
+    # At this point, the user should change the operator in line 181 to adjust if the 
+    # program should remove values above, below, or at the given value
     temp = []
     for item in data1:
         if float(item) < flatline:
@@ -281,7 +298,7 @@ def cleaner():
     temp = []
     
 
-    #then normalise and print to new file
+    # Normalises each trial now that the flat lines have been removed. 
     with open('WaistTogether.csv','w') as outputFile:
         csvWriter = csv.writer(outputFile)
         csvWriter.writerow(["time","position"])
